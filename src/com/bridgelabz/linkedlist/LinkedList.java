@@ -6,7 +6,7 @@ public class LinkedList<E> {
     private Node<E> tail;
 
     /* adding new head to linked list */
-    void push(E value) {
+    public void push(E value) {
         Node<E> newNode = new Node(value);
         if (head == null) {
             head = newNode;
@@ -18,7 +18,7 @@ public class LinkedList<E> {
     }
 
     /* adding new tail to linked list */
-    void append(E value) {
+    public void append(E value) {
         Node<E> newNode = new Node(value);
         if (head == null) {
             head = newNode;
@@ -30,7 +30,7 @@ public class LinkedList<E> {
     }
 
     /* Showing the whole linked-list*/
-    void display() {
+    public void display() {
         Node<E> temp = head;
         while (temp != null) {
             System.out.print(temp.data + "->");
@@ -40,7 +40,7 @@ public class LinkedList<E> {
     }
 
     /* delete the 1st node(head) of a linkedlist */
-    E pop() {
+    public E pop() {
         if (head == null) {
             return null;
         } else {
@@ -51,7 +51,7 @@ public class LinkedList<E> {
     }
 
     /* delete the last node(tail) of a linked list */
-    E popLast() {
+    public E popLast() {
         if (head == null)
             return null;
 
@@ -66,7 +66,7 @@ public class LinkedList<E> {
     }
 
     /* Searching a node in linked list */
-    Node<E> search(E value) {
+    public Node<E> search(E value) {
         if (head == null)
             return null;
 
@@ -80,7 +80,7 @@ public class LinkedList<E> {
     }
 
     /* Insert node in the middle of LinkedList */
-    void insertAfter(E searchData, E data) {
+    public void insertAfter(E searchData, E data) {
         Node<E> searchedElement = search(searchData);
 
         if (searchedElement == null) {
@@ -96,7 +96,7 @@ public class LinkedList<E> {
     }
 
     /* Get the size of linkedList*/
-    int size() {
+    public int size() {
         int count = 0;
         if (head == null)
             return count;
