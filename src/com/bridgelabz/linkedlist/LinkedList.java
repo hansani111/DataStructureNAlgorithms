@@ -38,4 +38,15 @@ public class LinkedList<E> {
         }
         System.out.println();
     }
+
+    /* delete the 1st node(head) of a linkedlist */
+    E pop() {
+        if (head == null) {
+            return null;
+        } else {
+            E popData = head.data;
+            head = head.next;
+            return popData;
+        }
+    }
 }
