@@ -78,4 +78,20 @@ public class LinkedList<E> {
         }
         return null;
     }
+
+    /* Insert node in the middle of LinkedList */
+    void insertAfter(E searchData, E data) {
+        Node<E> searchedElement = search(searchData);
+
+        if (searchedElement == null) {
+            System.out.println("element not found!!!");
+
+        } else {
+            Node<E> newNode = new Node(data);
+            Node<E> nextNode = searchedElement.next;
+            searchedElement.next = newNode;
+            newNode.next = nextNode;
+            System.out.println("Node added successfully");
+        }
+    }
 }
