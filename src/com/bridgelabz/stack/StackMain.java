@@ -9,5 +9,10 @@ public class StackMain {
         stack1.push(30);
         stack1.push(70);
         stack1.printStack();
+
+        System.out.println(stack1.peak());
+
+        stack1.pop();
+        stack1.printStack();
     }
 }
