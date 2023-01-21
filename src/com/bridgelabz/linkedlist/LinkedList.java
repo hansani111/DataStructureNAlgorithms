@@ -49,4 +49,19 @@ public class LinkedList<E> {
             return popData;
         }
     }
+
+    /* delete the last node(tail) of a linked list */
+    E popLast() {
+        if (head == null)
+            return null;
+
+        E popLastData = tail.data;
+        Node<E> temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        tail = temp;
+        temp.next = null;
+        return popLastData;
+    }
 }
