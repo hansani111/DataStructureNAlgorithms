@@ -62,5 +62,12 @@ public class LinkedListMain {
 
         Linkedlist4.insertAfter(30, 40);
         Linkedlist4.display();
+
+        System.out.println("******************************\n");
+
+        Linkedlist4.display();
+        Linkedlist4.deleteAfter(40);
+        Linkedlist4.size();
+        Linkedlist4.display();
     }
 }
