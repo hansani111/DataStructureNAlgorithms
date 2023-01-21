@@ -10,6 +10,13 @@ public class LinkedListMain {
 
         Linkedlist1.display();
 
+        Integer popData = Linkedlist1.pop();
+        if (popData == null) {
+            System.out.println("Empty linked list.");
+        } else
+            System.out.println("POP First Successfully done.Pop data : " + popData);
+        Linkedlist1.display();
+
         System.out.println("*****************************************************\n");
 
         LinkedList<Integer> Linkedlist2 = new LinkedList<>();
@@ -19,6 +26,5 @@ public class LinkedListMain {
         Linkedlist2.append(70);
 
         Linkedlist2.display();
-
     }
 }
