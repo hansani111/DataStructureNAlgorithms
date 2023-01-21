@@ -64,4 +64,18 @@ public class LinkedList<E> {
         temp.next = null;
         return popLastData;
     }
+
+    /* Searching a node in linked list */
+    Node<E> search(E value) {
+        if (head == null)
+            return null;
+
+        Node<E> temp = head;
+        while (temp != null) {
+            if (temp.data.equals(value))
+                return temp;
+            temp = temp.next;
+        }
+        return null;
+    }
 }
