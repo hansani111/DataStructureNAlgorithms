@@ -66,7 +66,7 @@ public class LinkedListMain {
         System.out.println("******************************\n");
 
         Linkedlist4.display();
-        Linkedlist4.deleteAfter(40);
+        Linkedlist4.pop(40);
         Linkedlist4.size();
         Linkedlist4.display();
     }
