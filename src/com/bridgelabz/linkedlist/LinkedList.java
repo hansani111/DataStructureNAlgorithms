@@ -17,6 +17,18 @@ public class LinkedList<E> {
         }
     }
 
+    /* adding new tail to linked list */
+    void append(E value) {
+        Node<E> newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+
     /* Showing the whole linked-list*/
     void display() {
         Node<E> temp = head;
