@@ -11,13 +11,13 @@ public class LinkedListMain {
         Linkedlist1.display();
 
         Integer popData = Linkedlist1.pop();
-        if(popData == null) {
+        if (popData == null) {
             System.out.println("Empty linked list.");
-        }else
+        } else
             System.out.println("POP First Successfully done.Pop data : " + popData);
         Linkedlist1.display();
 
-        System.out.println("*****************************************************\n");
+        System.out.println("******************************\n");
 
         LinkedList<Integer> Linkedlist2 = new LinkedList<>();
         Linkedlist2.append(56);
@@ -28,12 +28,29 @@ public class LinkedListMain {
         Linkedlist2.display();
 
         Integer popLastElement = Linkedlist2.popLast();
-        if(popLastElement == null)
+        if (popLastElement == null)
             System.out.println("Empty linked list.");
         else
             System.out.println("POP Last Successfully done.Pop data : " + popLastElement);
         Linkedlist2.display();
 
-    }
+        System.out.println("******************************\n");
 
+        LinkedList<Integer> Linkedlist3 = new LinkedList<>();
+        Linkedlist3.search(45);
+
+        Linkedlist3.append(56);
+        Linkedlist3.append(30);
+        Linkedlist3.append(45);
+        Linkedlist3.append(70);
+        Linkedlist3.display();
+
+        Node<Integer> searchElement = Linkedlist3.search(30);
+        if (searchElement == null)
+            System.out.println("Element not Found.");
+        else {
+            System.out.println("Element Found.");
+            System.out.println(searchElement);
+        }
+    }
 }
