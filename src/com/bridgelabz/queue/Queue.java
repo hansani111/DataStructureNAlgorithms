@@ -10,19 +10,20 @@ public class Queue<E> {
         linkedList.append(item);
     }
 
-/*showing the full Queue*/
+    /*showing the full Queue*/
     public void display() {
         linkedList.display();
     }
 
     /* deleting item in queue (delete tail) */
-    public void dequeue() {
+    public E dequeue() {
         linkedList.pop();
+        return linkedList.getHead().data;
     }
 
-/*searching a value in queue*/
+    /*searching a value in queue*/
     public boolean searchData(E data) {
-        if(linkedList.search(data) != null)
+        if (linkedList.search(data) != null)
             return true;
         return false;
     }

@@ -7,50 +7,55 @@ import com.bridgelabz.queue.Queue;
 public class BankingCashCounter {
 
     public static void main(String[] args) {
-
         Queue queue = new Queue();
-        Scanner counter = new Scanner(System.in);
-        System.out.println("Enter the number of persons");
-        int per = counter.nextInt();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of persons : ");
+        int person = sc.nextInt();
 
-        boolean result = checkNumber(per);
-        if (result) {
-            int cash = 99999999;
-            // to put every person in a queue
-            for (int i = 0; i < per; i++) {
+        if (checkNumber(person)) {
+            long cash = 999999999;
+            // puttting every person in a queue
+            for (int i = 0; i < person; i++) {
                 queue.enqueue(i);
             }
-            while (per != 0) {
-                System.out.println("amount available " + cash);
-                int count = 0, option = 0;
+            while (person != 0) {
+                System.out.println("Available cash in bank: " + cash);
+                boolean flag = true;
 
-                while (count == 0) {
+                while (flag) {
                     System.out.println("the person wants to \n1: Withdraw \n2: Deposit");
-                    option = counter.nextInt();
+                    int choice = sc.nextInt();
 
-                    switch (option) {
+                    switch (choice) {
                         case 1:
                             System.out.println("Enter the required amount to withdraw");
-                            int amount = counter.nextInt();
-                            System.out.println("amount withdrawn successfully");
-                            queue.dequeue();
-                            cash = cash - amount;
-                            count += 1;
-                            System.out.println("Remaining cash " + cash);
-                            per--;
+                            int withdrawAmount = sc.nextInt();
+                            if (withdrawAmount > cash) {
+                                System.out.println("Can't withdraw " + withdrawAmount
+                                        + " because available cash in bank is : " + cash);
+                                person--;
+                                flag = false;
+                            } else {
+                                System.out.println("amount withdrawn successfully");
+                                queue.dequeue();
+                                cash = cash - withdrawAmount;
+                                System.out.println("Remaining cash in bank : " + cash);
+                                person--;
+                                flag = false;
+                            }
                             System.out.println("--------THANKYOU VISIT AGAIN-------");
                             break;
 
                         case 2:
                             System.out.println("Enter the required amount to deposit");
-                            int amount1 = counter.nextInt();
-                            System.out.println("amount deposited successfully");
+                            int depositAmount = sc.nextInt();
+                            System.out.println("Amount deposited successfully");
                             queue.dequeue();
-                            cash = cash + amount1;
-                            count += 1;
-                            System.out.println("Remaining cash " + cash);
-                            per--;
+                            cash = cash + depositAmount;
+                            System.out.println("Remaining cash in bank : " + cash);
+                            person--;
                             System.out.println("--------THANKYOU VISIT AGAIN-------");
+                            flag = false;
                             break;
 
                         default:
@@ -64,9 +69,9 @@ public class BankingCashCounter {
     }
 
     public static boolean checkNumber(int person) {
-        if (person >= 0 || person <= 9) {
+        if (person >= 0 && person <= 9)
             return true;
-        } else
+        else
             return false;
     }
 }

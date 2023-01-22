@@ -20,6 +20,10 @@ public class FindYourNumber {
         int low = 0;
         int high = upperBound;
         while (low <= high) {
+            if(low == high) {
+                System.out.println("\nGot the number " + low);
+                return;
+            }
             int midVal = (low + high) / 2;
             System.out.println("Press 0 if the number is " + midVal);
             System.out.println("Press 1 if the number is between " + low + " to " + midVal);

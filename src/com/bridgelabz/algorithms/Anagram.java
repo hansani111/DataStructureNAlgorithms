@@ -10,10 +10,10 @@ public class Anagram {
         Anagram anagram = new Anagram();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the first String");
-        String a = sc.next();
+        String str1 = sc.next();
         System.out.println("Enter the second String");
-        String b = sc.next();
-        System.out.println(anagram.isAnagram(a, b));
+        String str2 = sc.next();
+        System.out.println(anagram.isAnagram(str1, str2));
 
     }
 
