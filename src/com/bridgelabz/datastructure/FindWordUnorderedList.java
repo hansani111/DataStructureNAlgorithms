@@ -8,7 +8,7 @@ public class FindWordUnorderedList {
 
 	public static void main(String[] args) {
 
-		String paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+	String paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         String[] wordsArray = paragraph.split(" ");
         
         LinkedList<String> list = new LinkedList<>();
